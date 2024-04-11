@@ -6,7 +6,7 @@ LABEL maintainer="Arthur"
 
 #Atualização de pacotes e dependências necessárias
 RUN apt-get update && \
-    apt-get install -y wget unzip curl openssh-client iputils-ping pgnupg lsb-release
+    apt-get install -y wget unzip curl openssh-client iputils-ping gnupg lsb-release
 
 #Versão do terraform
 ENV TERRAFORM_VERSION=1.7.0
@@ -18,8 +18,8 @@ RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
 #Criar a pasta /iac como ponto de montagem para um volume
-RUN mkdir /lab1
-VOLUME /lab1
+RUN mkdir /iac
+VOLUME /iac
 
 #Adicionar repo do GCloud SDK e instalar
 RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
