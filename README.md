@@ -1,2 +1,2 @@
 # bigquery-terraform
-Repositório com parte de estudo do uso de terraform para acessar o Bigquery na GCP
+Repositório com intuito de estudar mais sobre a arquitetura do GCP usando terraform.
